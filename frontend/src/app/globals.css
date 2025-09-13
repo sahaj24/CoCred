@@ -1,4 +1,27 @@
-@import "tailwindcss";
+.wave-shine {
+  position: relative;
+  overflow: hidden;
+}
+.wave-shine::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -60%;
+  width: 120%;
+  height: 200%;
+  background: linear-gradient(120deg, transparent 0%, #60a5fa 50%, transparent 100%);
+  transform: translateY(-50%) skewX(-20deg);
+  opacity: 0.6;
+  pointer-events: none;
+  transition: none;
+}
+.wave-shine:hover::before {
+  animation: wave-shine-anim 0.8s linear;
+}
+@keyframes wave-shine-anim {
+  0% { left: -60%; }
+  100% { left: 100%; }
+}@import "tailwindcss";
 
 :root {
   --background: #ffffff;

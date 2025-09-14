@@ -41,12 +41,12 @@ export default function HeroPage() {
           <img src={logoSrc} alt="Logo" className="h-20 w-20" />
         </div>
         <div className="flex gap-8">
-          <a href="#" className="text-[#174A8C] dark:text-[#AEC2F6] font-medium hover:underline flex items-center">Home</a>
-          <a href="/about" className="text-[#174A8C] dark:text-[#AEC2F6] font-medium hover:underline flex items-center">About</a>
+          <a href="#" className="text-[#174A8C] dark:text-[#2563eb] font-medium hover:underline flex items-center">Home</a>
+          <a href="/about" className="text-[#174A8C] dark:text-[#2563eb] font-medium hover:underline flex items-center">About</a>
           <a href="/signup" className="ml-4 px-6 py-2 rounded-full bg-[#174A8C] text-white font-semibold shadow hover:bg-[#2563eb] transition-colors duration-200 flex items-center">Signup</a>
         </div>
       </nav>
-      <div className="pt-20"> {/* Add top padding to avoid overlap with fixed navbar */}
+      <div className="pt-32"> {/* Add more top padding to create space between navbar and main content */}
       <section className="flex flex-col md:flex-row items-center justify-between px-8 md:px-20 py-16 gap-12">
         <div className="flex-1 flex flex-col gap-6">
           <h1 className="text-4xl md:text-6xl font-bold leading-tight">Showcase Your Achievements. Certify Your Journey.</h1>

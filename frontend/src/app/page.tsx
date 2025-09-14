@@ -41,8 +41,8 @@ export default function HeroPage() {
           <img src={logoSrc} alt="Logo" className="h-20 w-20" />
         </div>
         <div className="flex gap-8">
-          <a href="#" className="text-[#174A8C] dark:text-[#2563eb] font-medium hover:underline flex items-center">Home</a>
-          <a href="/about" className="text-[#174A8C] dark:text-[#2563eb] font-medium hover:underline flex items-center">About</a>
+          <a href="#" className="text-[#0F2C5C] dark:text-[#1E40AF] font-medium hover:underline flex items-center">Home</a>
+          <a href="/about" className="text-[#0F2C5C] dark:text-[#1E40AF] font-medium hover:underline flex items-center">About</a>
           <a href="/signup" className="ml-4 px-6 py-2 rounded-full bg-[#174A8C] text-white font-semibold shadow hover:bg-[#2563eb] transition-colors duration-200 flex items-center">Signup</a>
         </div>
       </nav>

@@ -33,7 +33,7 @@ export default function ForgotPage() {
 	};
 
 	return (
-			<div className={`min-h-screen flex flex-col items-center justify-center font-sans transition-colors duration-300 ${theme === 'dark' ? 'bg-[#080E18] text-white' : 'bg-white text-[#171717]'}`}> 
+			<div className={`min-h-screen flex flex-col items-center justify-center font-sans transition-colors duration-300 ${theme === 'dark' ? 'bg-[#080E18] text-white' : 'bg-[#AEC2F6] text-[#171717]'}`}> 
 				<div className="absolute top-6 right-6 flex items-center gap-2">
 					<button
 						onClick={handleThemeToggle}
@@ -45,20 +45,20 @@ export default function ForgotPage() {
 				<div className="mb-10 flex items-center justify-center w-[300px] h-[90px] bg-white rounded-xl shadow" style={{background: theme === 'dark' ? '#232A36' : '#fff'}}>
 					<img src={logoSrc} alt="CoCred Logo" className="w-[222px] h-[67px] object-contain" />
 				</div>
-				<div className="w-[600px] bg-[#181F2A] dark:bg-[#181F2A] rounded-2xl shadow-lg flex flex-col items-center justify-center p-12 border border-[#3A4252] dark:border-[#3A4252]">
-					<h2 className="text-3xl font-bold text-[#E2E8F0] mb-6 mt-2 text-left w-full leading-tight">What's your email address or username?</h2>
-				<p className="text-white text-base font-medium mb-6 w-full text-left">We'll help you find your account.<br /><a href="#" className="underline text-[#60A5FA]">Can't reset your password?</a></p>
+				<div className={`w-[600px] rounded-2xl shadow-lg flex flex-col items-center justify-center p-12 border ${theme === 'dark' ? 'bg-[#181F2A] border-[#3A4252]' : 'bg-[#C5CDDE] border-[#C5CDDE]'}`}>
+					<h2 className={`text-3xl font-bold mb-6 mt-2 text-left w-full leading-tight ${theme === 'dark' ? 'text-[#E2E8F0]' : 'text-black'}`}>What's your email address or username?</h2>
+				<p className={`text-base font-medium mb-6 w-full text-left ${theme === 'dark' ? 'text-white' : 'text-black'}`}>We'll help you find your account.<br /><a href="#" className={`underline ${theme === 'dark' ? 'text-[#60A5FA]' : 'text-[#174A8C]'}`}>Can't reset your password?</a></p>
 					<form className="w-full flex flex-col gap-6 mb-6">
 						<input
 							type="text"
 							placeholder="Email address or user id"
 							className="w-full h-[56px] bg-[#232A36] text-white px-6 rounded-lg border border-[#A0AEC0] focus:outline-none focus:border-[#174A8C] text-lg mb-2"
 						/>
-						<p className="text-[#A0AEC0] text-base mb-2">Check your mail to reset your password.</p>
+						<p className={`text-base mb-2 ${theme === 'dark' ? 'text-[#A0AEC0]' : 'text-black'}`}>Check your mail to reset your password.</p>
 						<button type="button" className="w-full h-[56px] bg-[#174A8C] text-white text-lg font-semibold rounded-full transition-colors duration-200 hover:bg-[#3B82F6]">Continue</button>
 					</form>
 				<div className="w-full flex justify-center mt-20">
-						<a href="#" className="text-[#A0AEC0] text-base font-medium hover:underline">Use password instead</a>
+						<a href="#" className={`text-base font-medium hover:underline ${theme === 'dark' ? 'text-[#A0AEC0]' : 'text-black'}`}>Use password instead</a>
 					</div>
 				</div>
 			</div>

@@ -51,7 +51,7 @@ export default function LoginPage() {
   };
 
   return (
-  <div className={`min-h-screen flex flex-col items-center justify-center font-sans transition-colors duration-300 ${theme === 'dark' ? 'bg-[#080E18] text-white' : 'bg-white text-[#171717]'}`}> 
+  <div className={`min-h-screen flex flex-col items-center justify-center font-sans transition-colors duration-300 ${theme === 'dark' ? 'bg-[#080E18] text-white' : 'bg-[#AEC2F6] text-[#171717]'}`}> 
       <div className="absolute top-6 right-6 flex items-center gap-2">
         <button
           onClick={handleThemeToggle}
@@ -63,8 +63,8 @@ export default function LoginPage() {
       <div className={`mb-6 flex items-center justify-center w-[200px] h-[60px] rounded-xl shadow ${theme === 'dark' ? 'bg-[#232A36]' : 'bg-white'}`}> 
         <img src={logoSrc} alt="CoCred Logo" className="w-[160px] h-[48px] object-contain" />
       </div>
-      <div className="w-[420px] bg-[#181F2A] dark:bg-[#181F2A] rounded-2xl shadow-lg flex flex-col items-center justify-center p-6 border border-[#3A4252] dark:border-[#3A4252]">
-        <div className="w-full flex flex-col gap-3 mb-5">
+      <div className="w-[540px] bg-[#181F2A] dark:bg-[#181F2A] rounded-2xl shadow-lg flex flex-col items-center justify-center p-8 border border-[#3A4252] dark:border-[#3A4252]">
+        <div className="w-full flex flex-col gap-4 mb-6">
           <button
             type="button"
             className={`w-full h-[50px] text-lg font-semibold rounded-full transition-colors duration-200 ${role === 'faculty' ? 'bg-[#174A8C] text-white border-3 border-[#60A5FA]' : 'bg-[#181F2A] text-[#A0AEC0] border-2 border-[#174A8C]'} dark:${role === 'faculty' ? 'bg-[#174A8C] text-white border-3 border-[#60A5FA]' : 'bg-[#181F2A] text-[#A0AEC0] border-2 border-[#174A8C]'}`}
@@ -85,7 +85,7 @@ export default function LoginPage() {
             Student
           </button>
         </div>
-        <form className="w-full flex flex-col gap-3 mb-4">
+        <form className="w-full flex flex-col gap-4 mb-2">
           <div className="relative">
             <input
               type="text"
@@ -107,16 +107,16 @@ export default function LoginPage() {
             </span>
           </div>
         </form>
-        <div className="w-full flex justify-end mb-4">
+        <div className="w-full flex justify-end mb-6">
           <a href="/forgot" className="text-[#A0AEC0] text-sm font-medium hover:underline">Forgotten password?</a>
         </div>
-        <button className="w-full h-[50px] bg-[#174A8C] text-white text-lg font-semibold rounded-full mb-3 transition-colors duration-200 hover:bg-[#3B82F6] wave-shine">Log In</button>
-        <div className="w-full flex items-center justify-center gap-2 text-[#A0AEC0] text-sm font-medium my-3">
+        <button className="w-[497px] h-[70px] bg-[#174A8C] text-white text-xl font-semibold rounded-full mb-4 transition-colors duration-200 hover:bg-[#3B82F6] wave-shine">Log In</button>
+        <div className="w-full flex items-center justify-center gap-2 text-[#A0AEC0] text-sm font-medium my-4">
           <span className="flex-1 h-px bg-[#3A4252]" />
           <span className="px-2">OR</span>
           <span className="flex-1 h-px bg-[#3A4252]" />
         </div>
-        <a href="/signup" className="w-full h-[50px] border border-[#A0AEC0] text-white text-lg font-semibold rounded-lg bg-transparent transition-colors duration-200 hover:bg-[#3B82F6] hover:text-white wave-shine flex items-center justify-center">Sign Up</a>
+        <a href="/signup" className="w-[500px] h-[70px] border border-[#A0AEC0] text-white text-xl font-semibold rounded-lg bg-transparent transition-colors duration-200 hover:bg-[#3B82F6] hover:text-white wave-shine flex items-center justify-center">Sign Up</a>
       </div>
     </div>
   );

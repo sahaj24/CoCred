@@ -1,9 +1,33 @@
 "use client";
+import { useState, useEffect } from "react";
 
 export default function AboutPage() {
+  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      // Check localStorage first, then system preference
+      const savedTheme = localStorage.getItem('theme') as 'light' | 'dark';
+      if (savedTheme) {
+        setTheme(savedTheme);
+      } else {
+        const mq = window.matchMedia('(prefers-color-scheme: dark)');
+        setTheme(mq.matches ? 'dark' : 'light');
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [theme]);
+
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center font-sans bg-[#AEC2F6] text-[#181F2A] px-4 py-12">
-      <div className="max-w-2xl w-full bg-white dark:bg-[#181F2A] rounded-2xl shadow-lg p-8 border border-[#C5CDDE]">
+    <div className={`min-h-screen flex flex-col items-center justify-center font-sans px-4 py-12 transition-colors duration-300 ${theme === 'dark' ? 'bg-[#080E18] text-white' : 'bg-[#AEC2F6] text-[#181F2A]'}`}>
+      <div className="max-w-2xl w-full bg-white dark:bg-[#181F2A] rounded-2xl shadow-lg p-8 border border-[#C5CDDE] dark:border-[#3A4252]">
   <h1 className="text-3xl md:text-4xl font-bold mb-4 text-[#174A8C] dark:text-[#AEC2F6] text-center">About CoCred</h1>
   <h3 className="text-lg font-bold mb-2">Problem Statement Title</h3>
   <p className="mb-2">Centralised Digital Platform for Comprehensive student activity record in HEIs</p>

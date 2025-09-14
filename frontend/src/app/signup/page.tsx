@@ -22,12 +22,23 @@ export default function SignUpPage() {
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
+      // Check localStorage first, then system preference
+      const savedTheme = localStorage.getItem('theme') as 'light' | 'dark';
+      if (savedTheme) {
+        setTheme(savedTheme);
+        setLogoSrc(savedTheme === 'dark' ? '/logo.svg' : '/logo-w.svg');
+      } else {
+        const mq = window.matchMedia('(prefers-color-scheme: dark)');
+        setTheme(mq.matches ? 'dark' : 'light');
+        setLogoSrc(mq.matches ? '/logo-w.svg' : '/logo.svg');
+      }
+      
       const mq = window.matchMedia('(prefers-color-scheme: dark)');
-      setTheme(mq.matches ? 'dark' : 'light');
-      setLogoSrc(mq.matches ? '/logo-w.svg' : '/logo.svg');
       const handler = (e: MediaQueryListEvent) => {
-        setTheme(e.matches ? 'dark' : 'light');
-        setLogoSrc(e.matches ? '/logo-w.svg' : '/logo.svg');
+        if (!localStorage.getItem('theme')) {
+          setTheme(e.matches ? 'dark' : 'light');
+          setLogoSrc(e.matches ? '/logo-w.svg' : '/logo.svg');
+        }
       };
       mq.addEventListener('change', handler);
       return () => mq.removeEventListener('change', handler);
@@ -42,6 +53,8 @@ export default function SignUpPage() {
       document.documentElement.classList.remove('dark');
       setLogoSrc('/logo-w.svg');
     }
+    // Save theme to localStorage
+    localStorage.setItem('theme', theme);
   }, [theme]);
 
   const handleThemeToggle = () => {

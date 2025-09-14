@@ -17,15 +17,34 @@ function useThemeLogo() {
 
 
 export default function ForgotPage() {
-	const [theme, setTheme] = useState<'light' | 'dark'>(typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-	const logoSrc = theme === 'dark' ? '/logo.svg' : '/logo-w.svg';
+	const [theme, setTheme] = useState<'light' | 'dark'>('light');
+	const [logoSrc, setLogoSrc] = useState('/logo.svg');
+
+	useEffect(() => {
+		if (typeof window !== 'undefined') {
+			// Check localStorage first, then system preference
+			const savedTheme = localStorage.getItem('theme') as 'light' | 'dark';
+			if (savedTheme) {
+				setTheme(savedTheme);
+				setLogoSrc(savedTheme === 'dark' ? '/logo.svg' : '/logo-w.svg');
+			} else {
+				const mq = window.matchMedia('(prefers-color-scheme: dark)');
+				setTheme(mq.matches ? 'dark' : 'light');
+				setLogoSrc(mq.matches ? '/logo-w.svg' : '/logo.svg');
+			}
+		}
+	}, []);
 
 	useEffect(() => {
 		if (theme === 'dark') {
 			document.documentElement.classList.add('dark');
+			setLogoSrc('/logo.svg');
 		} else {
 			document.documentElement.classList.remove('dark');
+			setLogoSrc('/logo-w.svg');
 		}
+		// Save theme to localStorage
+		localStorage.setItem('theme', theme);
 	}, [theme]);
 
 	const handleThemeToggle = () => {

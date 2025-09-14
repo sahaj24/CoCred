@@ -10,12 +10,12 @@ export default function AboutPage() {
   <h3 className="text-lg font-bold mb-2">Theme</h3>
   <p className="mb-6">Smart Education</p>
   <h2 className="text-xl font-semibold mb-2 text-center">Proposed Solution</h2>
-  <p className="mb-6 text-center">An all-in-one platform to log, track, and certify student's co-curricular work with QR-verifiable proofs and a clean, shareable portfolio.</p>
+  <p className="mb-6 text-center">An all-in-one platform to log, track, and certify student&apos;s co-curricular work with QR-verifiable proofs and a clean, shareable portfolio.</p>
   <ul className="list-disc pl-5 mb-6 space-y-2">
           <li>A clean web + mobile app where students log activities in seconds.</li>
           <li>Faculty approve with one tap for quick validation.</li>
           <li>The system generates a signed PDF with a QR code for easy and fast verification.</li>
-          <li>The student’s portfolio is automatically updated with every approved activity.</li>
+          <li>The student&apos;s portfolio is automatically updated with every approved activity.</li>
           <li>Supports offline submissions for areas with weak or no internet connectivity.</li>
           <li>Ensures fraud prevention through QR-based verification.</li>
           <li>Can link profiles to unique IDs for consistent and reliable identity management.</li>

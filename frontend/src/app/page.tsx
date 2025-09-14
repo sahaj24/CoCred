@@ -52,7 +52,7 @@ export default function HeroPage() {
           <h1 className="text-4xl md:text-6xl font-bold leading-tight">Showcase Your Achievements. Certify Your Journey.</h1>
           <p className="text-lg md:text-xl text-[#174A8C] font-medium max-w-xl">A smart, centralised platform for students to log, track, and share co-curricular work—QR-verified, portfolio-ready, and built for the future.</p>
           <div className="flex gap-4 mt-4">
-            <button className="px-6 py-3 rounded-full bg-[#174A8C] text-white font-semibold shadow hover:bg-[#2563eb] transition-colors duration-200">Let's Talk</button>
+              <button className="px-6 py-3 rounded-full bg-[#174A8C] text-white font-semibold shadow hover:bg-[#2563eb] transition-colors duration-200">Let&apos;s Talk</button>
             <button className="px-6 py-3 rounded-full bg-white text-[#174A8C] font-semibold shadow border border-[#174A8C] hover:bg-[#eaf0fb] transition-colors duration-200">Exit Project</button>
           </div>
         </div>

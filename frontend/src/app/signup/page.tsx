@@ -16,6 +16,7 @@ function useThemeLogo() {
 export default function SignUpPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [showRewritePassword, setShowRewritePassword] = useState(false);
+  const [role, setRole] = useState<'student' | 'faculty'>('student');
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
   const [logoSrc, setLogoSrc] = useState('/logo.svg');
 

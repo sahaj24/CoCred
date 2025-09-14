@@ -46,8 +46,8 @@ export default function ForgotPage() {
 					<img src={logoSrc} alt="CoCred Logo" className="w-[222px] h-[67px] object-contain" />
 				</div>
 				<div className={`w-[600px] rounded-2xl shadow-lg flex flex-col items-center justify-center p-12 border ${theme === 'dark' ? 'bg-[#181F2A] border-[#3A4252]' : 'bg-[#C5CDDE] border-[#C5CDDE]'}`}>
-					<h2 className={`text-3xl font-bold mb-6 mt-2 text-left w-full leading-tight ${theme === 'dark' ? 'text-[#E2E8F0]' : 'text-black'}`}>What's your email address or username?</h2>
-				<p className={`text-base font-medium mb-6 w-full text-left ${theme === 'dark' ? 'text-white' : 'text-black'}`}>We'll help you find your account.<br /><a href="#" className={`underline ${theme === 'dark' ? 'text-[#60A5FA]' : 'text-[#174A8C]'}`}>Can't reset your password?</a></p>
+					<h2 className={`text-3xl font-bold mb-6 mt-2 text-left w-full leading-tight ${theme === 'dark' ? 'text-[#E2E8F0]' : 'text-black'}`}>What&apos;s your email address or username?</h2>
+				<p className={`text-base font-medium mb-6 w-full text-left ${theme === 'dark' ? 'text-white' : 'text-black'}`}>We&apos;ll help you find your account.<br /><a href="#" className={`underline ${theme === 'dark' ? 'text-[#60A5FA]' : 'text-[#174A8C]'}`}>Can&apos;t reset your password?</a></p>
 					<form className="w-full flex flex-col gap-6 mb-6">
 						<input
 							type="text"

@@ -108,7 +108,7 @@ export default function LoginPage() {
           </div>
         </form>
         <div className="w-full flex justify-end mb-6">
-          <a href="/forgot" className="text-[#A0AEC0] text-sm font-medium hover:underline">Forgotten password?</a>
+          <a href="/forgot" className="text-[#A0AEC0] text-sm font-medium hover:underline">Forgotten password?&apos;</a>
         </div>
         <button className="w-[497px] h-[70px] bg-[#174A8C] text-white text-xl font-semibold rounded-full mb-4 transition-colors duration-200 hover:bg-[#3B82F6] wave-shine">Log In</button>
         <div className="w-full flex items-center justify-center gap-2 text-[#A0AEC0] text-sm font-medium my-4">

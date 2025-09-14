@@ -103,7 +103,7 @@ export default function SignUpPage() {
             </span>
           </div>
           <div className="w-full flex justify-end">
-            <a href="#" className={`text-sm font-medium hover:underline ${theme === 'dark' ? 'text-[#A0AEC0]' : 'text-black'}`}>Forgotten Email</a>
+            <a href="#" className={`text-sm font-medium hover:underline ${theme === 'dark' ? 'text-[#A0AEC0]' : 'text-black'}`}>Forgotten Email&apos;s</a>
           </div>
           <button type="button" className="w-full h-[48px] bg-[#174A8C] text-white text-base font-semibold rounded-full transition-colors duration-200 hover:bg-[#3B82F6] mb-2">Verify</button>
         </form>

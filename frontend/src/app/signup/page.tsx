@@ -144,7 +144,7 @@ export default function SignUpPage() {
         </form>
       </div>
       <div className="mt-6">
-        <a href="/login" className="text-[#60A5FA] text-base font-medium hover:underline">Already have an account? Log in here</a>
+        <a href="/login" className="text-[#0265dd] text-base font-medium hover:underline">Already have an account? Log in here</a>
       </div>
     </div>
   );

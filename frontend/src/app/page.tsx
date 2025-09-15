@@ -1,9 +1,20 @@
 "use client";
 import { useState, useEffect } from "react";
+import { useAuth } from "@/contexts/AuthContext";
+import { useRouter } from "next/navigation";
 
 export default function HeroPage() {
+  const { user, signOut, loading } = useAuth();
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
   const [logoSrc, setLogoSrc] = useState('/logo.svg');
+  const router = useRouter();
+
+  useEffect(() => {
+    // Redirect authenticated users to dashboard
+    if (!loading && user) {
+      router.push('/dashboard');
+    }
+  }, [user, loading, router]);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -56,7 +67,20 @@ export default function HeroPage() {
         <div className="flex gap-8">
           <a href="#" className="text-[#174A8C] dark:text-[#174A8C] font-medium hover:underline flex items-center">Home</a>
           <a href="/about" className="text-[#174A8C] dark:text-[#174A8C] font-medium hover:underline flex items-center">About</a>
-          <a href="/signup" className="ml-4 px-6 py-2 rounded-full bg-[#174A8C] text-white font-semibold shadow hover:bg-[#2563eb] transition-colors duration-200 flex items-center">Signup</a>
+          {user ? (
+            <div className="flex items-center gap-4">
+              <a href="/dashboard" className="text-[#174A8C] dark:text-[#174A8C] font-medium hover:underline flex items-center">Dashboard</a>
+              <span className="text-[#174A8C] font-medium">Welcome, {user.user_metadata?.name || user.email}</span>
+              <button 
+                onClick={signOut}
+                className="px-6 py-2 rounded-full bg-red-600 text-white font-semibold shadow hover:bg-red-700 transition-colors duration-200 flex items-center"
+              >
+                Sign Out
+              </button>
+            </div>
+          ) : (
+            <a href="/signup" className="ml-4 px-6 py-2 rounded-full bg-[#174A8C] text-white font-semibold shadow hover:bg-[#2563eb] transition-colors duration-200 flex items-center">Signup</a>
+          )}
         </div>
       </nav>
       <div className="pt-32"> {/* Add more top padding to create space between navbar and main content */}

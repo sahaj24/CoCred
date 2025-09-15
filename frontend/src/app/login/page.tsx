@@ -3,18 +3,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { supabase } from "@/lib/supabase";
-
-function useThemeLogo() {
-  const [isDark, setIsDark] = useState(false);
-  useEffect(() => {
-    const mq = window.matchMedia('(prefers-color-scheme: dark)');
-    setIsDark(mq.matches);
-  const handler = (e: MediaQueryListEvent) => setIsDark(e.matches);
-    mq.addEventListener('change', handler);
-    return () => mq.removeEventListener('change', handler);
-  }, []);
-  return isDark ? '/logo-w.svg' : '/logo.svg';
-}
+import Image from "next/image";
 
 export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
@@ -104,7 +93,7 @@ export default function LoginPage() {
         </button>
       </div>
       <div className={`mb-6 flex items-center justify-center w-[200px] h-[60px] rounded-xl shadow-lg ${theme === 'dark' ? 'bg-slate-800 border border-slate-700' : 'bg-white border border-slate-200'}`}> 
-        <img src={logoSrc} alt="CoCred Logo" className="w-[160px] h-[48px] object-contain" />
+        <Image src={logoSrc} alt="CoCred Logo" width={160} height={48} className="object-contain" />
       </div>
       <div className={`w-[540px] rounded-2xl shadow-xl flex flex-col items-center justify-center p-8 border ${theme === 'dark' ? 'bg-slate-800 border-slate-700' : 'bg-white border-slate-200'}`}>
         {authError && (
@@ -151,7 +140,7 @@ export default function LoginPage() {
               className="absolute right-4 top-1/2 -translate-y-1/2 cursor-pointer opacity-60 hover:opacity-100 transition-opacity"
               onClick={() => setShowPassword((prev) => !prev)}
             >
-              <img src="/Eye.svg" alt="Show/Hide" width={20} height={20} />
+              <Image src="/Eye.svg" alt="Show/Hide" width={20} height={20} />
             </span>
           </div>
         </form>

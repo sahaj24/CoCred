@@ -2,18 +2,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { supabase } from "@/lib/supabase";
-
-function useThemeLogo() {
-  const [isDark, setIsDark] = useState(false);
-  useEffect(() => {
-    const mq = window.matchMedia('(prefers-color-scheme: dark)');
-    setIsDark(mq.matches);
-    const handler = (e: MediaQueryListEvent) => setIsDark(e.matches);
-    mq.addEventListener('change', handler);
-    return () => mq.removeEventListener('change', handler);
-  }, []);
-  return isDark ? '/logo-w.svg' : '/logo.svg';
-}
+import Image from "next/image";
 export default function SignUpPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [showRewritePassword, setShowRewritePassword] = useState(false);
@@ -91,7 +80,7 @@ export default function SignUpPage() {
         </button>
       </div>
       <div className={`mb-8 flex items-center justify-center w-[250px] h-[80px] rounded-xl shadow-lg border ${theme === 'dark' ? 'bg-slate-800 border-slate-700' : 'bg-white border-slate-200'}`}>
-        <img src={logoSrc} alt="CoCred Logo" className="w-[222px] h-[67px] object-contain" />
+        <Image src={logoSrc} alt="CoCred Logo" width={222} height={67} className="object-contain" />
       </div>
       <div className={`w-[540px] rounded-2xl shadow-xl flex flex-col items-center justify-center p-8 border ${theme === 'dark' ? 'bg-slate-800 border-slate-700' : 'bg-white border-slate-200'}`}>
         <div className="w-full flex flex-col items-center mb-6">
@@ -131,7 +120,7 @@ export default function SignUpPage() {
               className="absolute right-4 top-1/2 -translate-y-1/2 cursor-pointer opacity-60 hover:opacity-100 transition-opacity"
               onClick={() => setShowPassword((prev) => !prev)}
             >
-              <img src="/Eye.svg" alt="Show/Hide" width={20} height={20} />
+              <Image src="/Eye.svg" alt="Show/Hide" width={20} height={20} />
             </span>
           </div>
           <div className="w-full flex justify-end">
@@ -152,7 +141,7 @@ export default function SignUpPage() {
               className="absolute right-4 top-1/2 -translate-y-1/2 cursor-pointer opacity-60 hover:opacity-100 transition-opacity"
               onClick={() => setShowPassword((prev) => !prev)}
             >
-              <img src="/Eye.svg" alt="Show/Hide" width={20} height={20} />
+              <Image src="/Eye.svg" alt="Show/Hide" width={20} height={20} />
             </span>
           </div>
           <div className="relative">
@@ -165,7 +154,7 @@ export default function SignUpPage() {
               className="absolute right-4 top-1/2 -translate-y-1/2 cursor-pointer opacity-60 hover:opacity-100 transition-opacity"
               onClick={() => setShowRewritePassword((prev) => !prev)}
             >
-              <img src="/Eye.svg" alt="Show/Hide" width={20} height={20} />
+              <Image src="/Eye.svg" alt="Show/Hide" width={20} height={20} />
             </span>
           </div>
           <div className="flex items-center gap-2">

@@ -1,19 +1,6 @@
 "use client";
-
-
 import { useState, useEffect } from "react";
-
-function useThemeLogo() {
-  const [isDark, setIsDark] = useState(false);
-  useEffect(() => {
-    const mq = window.matchMedia('(prefers-color-scheme: dark)');
-    setIsDark(mq.matches);
-    const handler = (e: MediaQueryListEvent) => setIsDark(e.matches);
-    mq.addEventListener('change', handler);
-    return () => mq.removeEventListener('change', handler);
-  }, []);
-  return isDark ? '/logo-w.svg' : '/logo.svg';
-}
+import Image from "next/image";
 
 
 export default function ForgotPage() {
@@ -62,7 +49,7 @@ export default function ForgotPage() {
 					</button>
 				</div>
 				<div className={`mb-10 flex items-center justify-center w-[300px] h-[90px] rounded-xl shadow-lg border ${theme === 'dark' ? 'bg-slate-800 border-slate-700' : 'bg-white border-slate-200'}`}>
-					<img src={logoSrc} alt="CoCred Logo" className="w-[222px] h-[67px] object-contain" />
+					<Image src={logoSrc} alt="CoCred Logo" className="w-[222px] h-[67px] object-contain" width={222} height={67} />
 				</div>
 				<div className={`w-[600px] rounded-2xl shadow-xl flex flex-col items-center justify-center p-12 border ${theme === 'dark' ? 'bg-slate-800 border-slate-700' : 'bg-white border-slate-200'}`}>
 					<h2 className={`text-3xl font-bold mb-6 mt-2 text-left w-full leading-tight ${theme === 'dark' ? 'text-slate-200' : 'text-slate-800'}`}>What&apos;s your email address or username?</h2>

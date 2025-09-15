@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { useAuth } from "@/contexts/AuthContext";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 export default function HeroPage() {
   const { user, signOut, loading } = useAuth();
@@ -62,7 +63,7 @@ export default function HeroPage() {
       {/* Navbar - blended with background */}
       <nav className="w-full flex items-center justify-between px-8 md:px-20 py-4 fixed top-0 left-0 z-40 bg-transparent backdrop-blur-md">
         <div className="flex items-center gap-3">
-          <img src={logoSrc} alt="Logo" className="h-20 w-20" />
+          <Image src={logoSrc} alt="Logo" width={80} height={80} />
         </div>
         <div className="flex gap-8">
           <a href="#" className="text-[#174A8C] dark:text-[#174A8C] font-medium hover:underline flex items-center">Home</a>
@@ -96,7 +97,7 @@ export default function HeroPage() {
         <div className="flex-1 flex items-center justify-center relative">
           {/* QR Scan Illustration */}
           <div className="w-[320px] h-[420px] rounded-3xl shadow-lg flex items-center justify-center bg-white dark:bg-[#232A36]">
-            <img src="/qrscan.jpg" alt="QR Scan" className="w-full h-full object-contain rounded-3xl" />
+            <Image src="/qrscan.jpg" alt="QR Scan" width={320} height={420} className="w-full h-full object-contain rounded-3xl" />
           </div>
           {/* Example floating tags */}
           <div className="absolute top-8 left-0 bg-white text-[#174A8C] px-4 py-2 rounded-full shadow font-semibold">QR-Verification</div>

@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { useAuth } from "@/contexts/AuthContext";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 export default function DashboardPage() {
   const { user, signOut, loading } = useAuth();
@@ -81,7 +82,7 @@ export default function DashboardPage() {
       <header className={`backdrop-blur-md border-b ${theme === 'dark' ? 'bg-slate-900/80 border-slate-700' : 'bg-white/80 border-slate-200'}`}>
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <img src={logoSrc} alt="CoCred Logo" className="h-12 w-12" />
+            <Image src={logoSrc} alt="CoCred Logo" width={48} height={48} />
             <div>
               <h1 className={`text-xl font-bold ${theme === 'dark' ? 'text-slate-100' : 'text-slate-800'}`}>CoCred Dashboard</h1>
               <p className={`text-sm ${theme === 'dark' ? 'text-slate-400' : 'text-slate-500'}`}>Welcome back, {user.user_metadata?.name || user.email}</p>
